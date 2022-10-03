@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ApiRoles\GetCustomerApiRoles\**" />
+    <Compile Remove="ApiRoles\RemoveCustomerApiKey\**" />
+    <EmbeddedResource Remove="ApiRoles\GetCustomerApiRoles\**" />
+    <EmbeddedResource Remove="ApiRoles\RemoveCustomerApiKey\**" />
+    <None Remove="ApiRoles\GetCustomerApiRoles\**" />
+    <None Remove="ApiRoles\RemoveCustomerApiKey\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="ApiRoles\GetCustomerApiRoles\GetCustomerApiRoleQuery.cs" />
+    <Compile Include="ApiRoles\GetCustomerApiRoles\GetCustomerApiRoleQueryHandler.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="FluentValidation" Version="11.2.0" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RestSharp" Version="108.0.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.22.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Crm.Domain\Crm.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
